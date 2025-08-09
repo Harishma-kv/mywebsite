@@ -3,223 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Referral System</title>
+    <title>Refer and Earn</title>
 
-    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
-    <meta property="og:title" content="🚀 Join me on this amazing platform!">
-    <meta property="og:description" content="Get exclusive benefits and rewards when you sign up using my referral link. Don't miss out!">
-    <meta property="og:image" content="https://harishma-kv.github.io/mywebsite/sample.jpeg">
-    <meta property="og:url" content="https://harishma-kv.github.io/mywebsite/">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="🚀 Join me on this amazing platform!">
-    <meta name="twitter:description" content="Get exclusive benefits and rewards when you sign up using my referral link.">
-    <meta name="twitter:image" content="https://harishma-kv.github.io/mywebsite/sample.jpeg">
+    <!-- Open Graph Meta Tags for WhatsApp/Facebook -->
+    <meta property="og:title" content="Refer and Earn!" />
+    <meta property="og:description" content="Invite your friends and earn rewards." />
+    <meta property="og:image" content="https://harishma-kv.github.io/mywebsite/sample.jpeg" />
+    <meta property="og:url" content="https://harishma-kv.github.io/mywebsite/" />
+    <meta property="og:type" content="website" />
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
             padding: 20px;
         }
-        .container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
-        }
-        .invite-btn {
-            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
-            border: none;
-            color: white;
-            padding: 15px 40px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
-        }
-        .invite-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4);
-        }
-        .share-options {
-            display: none;
-            margin-top: 30px;
-        }
-        .share-options.show {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .share-title {
-            font-size: 20px;
+        img {
+            max-width: 100%;
+            height: auto;
             margin-bottom: 20px;
-            color: #333;
         }
-        .share-buttons {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-        .share-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: white;
-        }
-        .whatsapp { background: #25d366; }
-        .whatsapp:hover { background: #128c7e; }
-        .facebook { background: #1877f2; }
-        .facebook:hover { background: #166fe5; }
-        .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-        .instagram:hover { opacity: 0.8; }
-        .sms { background: #34c759; }
-        .sms:hover { background: #30d158; }
-        .twitter { background: #1da1f2; }
-        .twitter:hover { background: #0d8bd9; }
-        .email { background: #ea4335; }
-        .email:hover { background: #d93025; }
-        .share-icon { margin-right: 8px; font-size: 16px; }
-        .back-btn {
-            margin-top: 20px;
-            background: #6c757d;
-            border: none;
-            color: white;
+        button {
             padding: 10px 20px;
-            border-radius: 5px;
+            background-color: #25D366;
+            color: white;
+            border: none;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 16px;
+            border-radius: 5px;
         }
-        .back-btn:hover { background: #5a6268; }
-        .referral-preview {
-            margin-top: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border: 1px dashed #dee2e6;
+        button:hover {
+            background-color: #128C7E;
         }
-        .preview-title { font-size: 14px; color: #6c757d; margin-bottom: 10px; }
-        .preview-content { font-size: 12px; color: #495057; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="https://harishma-kv.github.io/mywebsite/sample.jpeg" 
-             alt="Referral Banner" 
-             style="width:150px; height:auto; margin-bottom:10px;">
-        
-        <div id="invite-section">
-            <h1 style="margin-bottom: 20px; color: #333;">💰 Refer & Earn</h1>
-            <p style="margin-bottom: 30px; color: #666;">Invite your friends and earn amazing rewards!</p>
-            <button class="invite-btn" onclick="showShareOptions()">📢 Invite Friends</button>
-            
-            <div class="referral-preview">
-                <div class="preview-title">Preview of your invitation:</div>
-                <div class="preview-content">
-                    <strong>🚀 Join me on this amazing platform!</strong><br>
-                    Get exclusive benefits and rewards when you sign up using my referral link.<br>
-                    <em>🔗 https://yourapp.com/ref/abc123</em>
-                </div>
-            </div>
-        </div>
 
-        <div id="share-options" class="share-options">
-            <h3 class="share-title">Choose how to share:</h3>
-            <div class="share-buttons">
-                <button class="share-btn whatsapp" onclick="shareVia('whatsapp')">💬 WhatsApp</button>
-                <button class="share-btn facebook" onclick="shareVia('facebook')">📘 Facebook</button>
-                <button class="share-btn instagram" onclick="shareVia('instagram')">📸 Instagram</button>
-                <button class="share-btn sms" onclick="shareVia('sms')">📱 SMS</button>
-                <button class="share-btn twitter" onclick="shareVia('twitter')">🐦 Twitter</button>
-                <button class="share-btn email" onclick="shareVia('email')">📧 Email</button>
-            </div>
-            <button class="back-btn" onclick="hideShareOptions()">⬅ Back</button>
-        </div>
-    </div>
+    <img src="sample.jpeg" alt="Refer and Earn">
+    <h1>Refer and Earn!</h1>
+    <p>Invite your friends and earn exciting rewards.</p>
+    <button id="inviteBtn">Invite Friends on WhatsApp</button>
 
     <script>
-        const referralData = {
-            title: "🚀 Join me on this amazing platform!",
-            description: "Get exclusive benefits and rewards when you sign up using my referral link. Don't miss out on this opportunity!",
-            url: "https://yourapp.com/ref/abc123",
-            imageUrl: "https://harishma-kv.github.io/mywebsite/sample.jpeg"
-        };
-
-        function showShareOptions() {
-            document.getElementById('invite-section').style.display = 'none';
-            document.getElementById('share-options').classList.add('show');
-        }
-
-        function hideShareOptions() {
-            document.getElementById('share-options').classList.remove('show');
-            setTimeout(() => {
-                document.getElementById('share-options').style.display = 'none';
-                document.getElementById('invite-section').style.display = 'block';
-            }, 300);
-        }
-
-        function shareVia(platform) {
-            const { title, description, url } = referralData;
-            const fullMessage = `${title}\n\n${description}\n\n${url}`;
-
-            switch(platform) {
-                case 'whatsapp':
-                    window.open(`https://wa.me/?text=${encodeURIComponent(fullMessage)}`, '_blank');
-                    break;
-                case 'facebook':
-                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(title + ' - ' + description)}`, '_blank');
-                    break;
-                case 'instagram':
-                    navigator.clipboard.writeText(fullMessage).then(() => {
-                        alert('Referral message copied! Paste it on Instagram.');
-                        window.open('https://www.instagram.com/', '_blank');
-                    }).catch(() => {
-                        alert('Please copy this message and share on Instagram:\n\n' + fullMessage);
-                        window.open('https://www.instagram.com/', '_blank');
-                    });
-                    break;
-                case 'sms':
-                    window.open(`sms:?body=${encodeURIComponent(fullMessage)}`, '_self');
-                    break;
-                case 'twitter':
-                    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(fullMessage)}`, '_blank');
-                    break;
-                case 'email':
-                    const subject = encodeURIComponent(title);
-                    const body = encodeURIComponent(`${description}\n\nClick here to join: ${url}`);
-                    window.open(`mailto:?subject=${subject}&body=${body}`, '_self');
-                    break;
-                default:
-                    alert('Sharing option not supported yet.');
-            }
-        }
+        document.getElementById("inviteBtn").addEventListener("click", function () {
+            const shareText = "Join me and earn rewards! Check it out here:";
+            const shareUrl = "https://harishma-kv.github.io/mywebsite/";
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText + " " + shareUrl)}`;
+            window.open(whatsappUrl, "_blank");
+        });
     </script>
+
 </body>
 </html>
+

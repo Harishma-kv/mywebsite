@@ -1,58 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refer and Earn</title>
+    <title>Refer and Earn!</title>
+    <meta name="description" content="Invite your friends and earn rewards instantly.">
 
-    <!-- Open Graph Meta Tags for WhatsApp/Facebook -->
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn, Instagram) -->
     <meta property="og:title" content="Refer and Earn!" />
-    <meta property="og:description" content="Invite your friends and earn rewards." />
+    <meta property="og:description" content="Invite your friends and earn rewards instantly." />
     <meta property="og:image" content="https://harishma-kv.github.io/mywebsite/samv.jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://harishma-kv.github.io/mywebsite/" />
     <meta property="og:type" content="website" />
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #25D366;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #128C7E;
-        }
-    </style>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Refer and Earn!" />
+    <meta name="twitter:description" content="Invite your friends and earn rewards instantly." />
+    <meta name="twitter:image" content="https://harishma-kv.github.io/mywebsite/samv.jpeg" />
+
+    <!-- Extra tags for better SEO & sharing -->
+    <meta name="robots" content="index, follow">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="My Website" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-
-    <img src="samv.jpeg" alt="Refer and Earn">
-    <h1>Refer and Earn!</h1>
-    <p>Invite your friends and earn exciting rewards.</p>
-    <button id="inviteBtn">Invite Friends on WhatsApp</button>
-
-    <script>
-        document.getElementById("inviteBtn").addEventListener("click", function () {
-            const shareText = "Join me and earn rewards! Check it out here:";
-            const shareUrl = "https://harishma-kv.github.io/mywebsite/";
-            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText + " " + shareUrl)}`;
-            window.open(whatsappUrl, "_blank");
-        });
-    </script>
-
-</body>
-</html>
 
